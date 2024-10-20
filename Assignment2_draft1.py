@@ -4,17 +4,25 @@ while list_num < 2:
     if list_num < 2:
         print("Must enter at least two data points.")
 
-x = 0
+x = 1
 years = []
 fertility = []
-while x < list_num: 
-        x = x + 1
-        print("What is the year of Datapoint",x,"?" )
-        years.append(int(input()))
-        print("What is the fertility rate of Datapoint",x,"?")
-        fertility.append(float(input()))
-print(years)
-print(fertility)
+while x <= list_num: 
+
+        print("What is the year of datapoint",x,"?")
+        year = int(input())
+        print("What is the fertility of datapoint",x,"?")
+        fertility_rate = float(input())
+
+        if year in years:
+            index = years.index(year)
+            fertility[index] = fertility_rate 
+        else:
+            years.append(year)
+            fertility.append(fertility_rate)
+            x = x + 1  
+# print(years)
+# print(fertility)
             
 start_year = int(input("Which year you would like to start with?"))
 if start_year in years:
@@ -22,7 +30,7 @@ if start_year in years:
     if end_year in years:
         if end_year > start_year:
             ave=(fertility[years.index(start_year)] + fertility[years.index(end_year)])/2   
-            print("The average fertility rate of these two years is", round(ave,2))
+            print(f"The average fertility rate of these two years is {ave:.2f}.")
             if fertility[years.index(start_year)] > fertility[years.index(end_year)]:
                 print("There is a downward trend.")
             elif fertility[years.index(start_year)] < fertility[years.index(end_year)]:
