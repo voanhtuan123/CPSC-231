@@ -1,0 +1,5 @@
+def fullword(sentence,word):
+    words = sentence.split()
+    return word in words
+
+print(fullword("hello world", "hello"))
