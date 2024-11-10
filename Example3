@@ -1,5 +1,7 @@
-def fullword(sentence,word):
-    words = sentence.split()
-    return word in words
+def fullword(word):
+    if word:
+        return f"Greetings {word}! I am your virtual assistant Chat231."
+    else:
+        return " "
 
-print(fullword("hello world", "hello"))
+print(fullword(""))
