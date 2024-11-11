@@ -1,5 +1,5 @@
 def full_word(sentence,word):     #function2
-
+    answer = False
     # Convert both sentence and word to lowercase for case insensitivity and add " " to start and end of sentence
     SentenceLowercase = sentence.lower()
     WordLowercase = word.lower()
@@ -14,14 +14,25 @@ def full_word(sentence,word):     #function2
 
 
     for i in range(len(WordLowercase)):
+        track = 0
         if SentenceLowercase[i] == WordLowercase[0]:
             if SentenceLowercase[i-1] in separators:
-                for x in range(len(WordLowercase)):
-                    if WordLowercase[x] == SentenceLowercase[x+i]:
+                if len(SentenceLowercase) - i < len(WordLowercase):
+                        continue
+                else:
+                    for x in range(len(WordLowercase)):
+                        if WordLowercase[x] == SentenceLowercase[x+i]:
+                            track = x + i
+                            answer = True
+                        else:
+                            print(answer)
+                            continue
+
                         print(x+i)
+
+                    if SentenceLowercase[track + 1] and answer == True:
                         return True
-                    else:
-                        return False 
+    return False       
                     
 
-print(full_word("University of Calgary","Uni"))
+print(full_word("University of Calgary","of"))
