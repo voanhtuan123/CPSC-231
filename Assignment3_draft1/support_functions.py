@@ -10,7 +10,7 @@ def full_word(sentence,word):     #function2
     WordLowercase = word.lower()  #convert all letters in word to lowercase
     SentenceLowercase = " " + SentenceLowercase + " " #add blank at the start and at the end of the sentence
 
-        # List of separators
+    # List of separators
     separators = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "{", "|", "}", "~", "`"]
 
     # sentence is the same with word, return true 
